@@ -12,7 +12,7 @@
     "build": "tsc && cp action.yml dist/",
     "format": "prettier --write **/*.ts",
     "lint": "eslint src/**/*.ts",
-    "package": "npx rimraf ./dist && npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package": "npx rimraf ./dist && npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && cp action.yml dist/",
     "test": "mocha -r ts-node/register --reporter mocha-multi-reporters --reporter-options configFile=test/config.json test/**/*.ts",
     "clean": "rm -rf dist",
     "all": "npm run build && npm run lint && npm run pack && npm test"
