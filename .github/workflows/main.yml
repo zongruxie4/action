@@ -61,7 +61,7 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm run pack
+          npm run package
 
           cp action.yml dist/
           cp README.md dist/
