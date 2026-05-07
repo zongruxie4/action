@@ -8,6 +8,7 @@ chai.use(chaiAsPromised)
 
 const tapResourcePath = `${__dirname}/resources/tap`
 const junitResourcePath = `${__dirname}/resources/junit`
+const trxResourcePath = `${__dirname}/resources/trx`
 
 describe("file", async () => {
     it("identifies common tap", async () => {
@@ -54,5 +55,12 @@ describe("file", async () => {
         expect(result.counts.passed).to.eql(4)
         expect(result.counts.failed).to.eql(4)
         expect(result.counts.skipped).to.eql(2)
+    })
+
+    it("identifies trx", async() => {
+        const result = await parseFile(`${trxResourcePath}/example.trx`)
+        expect(result.counts.passed).to.eql(3)
+        expect(result.counts.failed).to.eql(1)
+        expect(result.counts.skipped).to.eql(0)
     })
 })

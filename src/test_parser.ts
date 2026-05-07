@@ -387,5 +387,9 @@ export async function parseFile(filename: string): Promise<TestResult> {
         return await parseJunitXml(xml)
     }
 
+    if ('TestRun' in xml) {
+        return await parseTrx(xml)
+    }
+
     throw new Error(`unknown test file type for '${filename}'`)
 }
