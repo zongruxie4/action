@@ -4,6 +4,7 @@ import * as util from "util"
 import xml2js from "xml2js"
 
 export enum TestStatus {
+    None = 0,
     Pass = (1 << 0),
     Fail = (1 << 1),
     Skip = (1 << 2)

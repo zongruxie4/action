@@ -11,7 +11,7 @@ async function run(): Promise<void> {
         const pathGlobs = core.getInput("paths", { required: true })
         const outputFile = core.getInput("output") || process.env.GITHUB_STEP_SUMMARY || "-"
         const showList = core.getInput("show")
-	const folded = JSON.parse(core.getInput("folded") || "false")
+        const folded = JSON.parse(core.getInput("folded") || "false")
 
         /*
          * Given paths may either be an individual path (eg "foo.xml"),
@@ -28,9 +28,9 @@ async function run(): Promise<void> {
             }
         }
 
-        let show: number = TestStatus.Fail
+        let show = TestStatus.Fail
         if (showList) {
-            show = 0
+            show = TestStatus.None
 
             for (const showName of showList.split(/,\s*/)) {
                 if (showName === "none") {
