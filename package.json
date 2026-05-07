@@ -1,6 +1,6 @@
 {
   "name": "test-summary",
-  "version": "0.0.1",
+  "version": "2.5.0",
   "private": true,
   "description": "Display test results in a GitHub Actions workflow",
   "main": "dist/index.js",
